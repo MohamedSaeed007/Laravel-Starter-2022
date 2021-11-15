@@ -1,6 +1,6 @@
 <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('admin.home') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
             </svg>
@@ -9,7 +9,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('users.index') }}">
+        <a class="nav-link" href="{{ route('admin.users.index') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
             </svg>
@@ -18,7 +18,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('about') }}">
+        <a class="nav-link" href="{{ route('admin.about') }}">
             <svg class="nav-icon">
                 <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
             </svg>

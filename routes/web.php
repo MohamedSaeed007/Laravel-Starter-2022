@@ -23,12 +23,3 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware(['auth', 'role:owner'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::view('about', 'about')->name('about')->middleware('auth');
-
-    Route::get('users', [UserController::class, 'index'])->name('users.index');
-
-    Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
-});
