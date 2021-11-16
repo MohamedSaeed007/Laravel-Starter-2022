@@ -54,6 +54,26 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">
+                            <img alt="United States"
+                                src="http://purecatamphetamine.github.io/country-flag-icons/3x2/{{ LaravelLocalization::getCurrentLocaleRegional() }}.svg" width="32px" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <a class="dropdown-item"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <img alt="United States"
+                                    src="http://purecatamphetamine.github.io/country-flag-icons/3x2/{{ $properties['regional'] }}.svg"
+                                    width="32px" />
+                                {{ $properties['native'] }}
+                            </a>
+                            @endforeach
+                        </div>
+                    </li>
+                </ul>
+                <ul class="header-nav ms-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
