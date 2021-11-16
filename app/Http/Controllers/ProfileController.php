@@ -14,6 +14,12 @@ class ProfileController extends Controller
 
     public function update(ProfileUpdateRequest $request)
     {
+        if ($request->photo) {
+            if(auth()->user()->hasMedia()){
+                auth()->user()->getFirstMedia()->delete();
+            }
+            auth()->user()->addMedia($request->photo)->toMediaCollection();
+        }
         if ($request->password) {
             auth()->user()->update(['password' => Hash::make($request->password)]);
         }
