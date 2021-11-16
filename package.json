@@ -23,6 +23,5 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "toastr": "^2.1.4"
     }
 }
