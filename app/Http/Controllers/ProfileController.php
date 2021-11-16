@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileUpdateRequest;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProfileController extends Controller
 {
@@ -28,6 +29,7 @@ class ProfileController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
+        Toastr::success('Profile Updated Successfully', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->back()->with('success', 'Profile updated.');
     }
